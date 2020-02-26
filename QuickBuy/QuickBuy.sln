@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29519.87
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickBuy.Dominio", "QuickBuy.Dominio\QuickBuy.Dominio.csproj", "{250BB26E-C625-449F-976A-7DE18D8A541B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuickBuy.Dominio", "QuickBuy.Dominio\QuickBuy.Dominio.csproj", "{250BB26E-C625-449F-976A-7DE18D8A541B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickBuy.Repositorio", "QuickBuy.Repositorio\QuickBuy.Repositorio.csproj", "{4BBC6FBA-30DE-4E90-9D37-5EAC6B2C980C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuickBuy.Repositorio", "QuickBuy.Repositorio\QuickBuy.Repositorio.csproj", "{4BBC6FBA-30DE-4E90-9D37-5EAC6B2C980C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickBuy.Web", "QuickBuy.Web\QuickBuy.Web.csproj", "{647A2907-2D52-46AA-A13B-EDF284896B73}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickBuy.Web", "QuickBuy.Web\QuickBuy.Web.csproj", "{22C08F24-3BFA-4024-A347-FB5DAB181065}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,10 @@ Global
 		{4BBC6FBA-30DE-4E90-9D37-5EAC6B2C980C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4BBC6FBA-30DE-4E90-9D37-5EAC6B2C980C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4BBC6FBA-30DE-4E90-9D37-5EAC6B2C980C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{647A2907-2D52-46AA-A13B-EDF284896B73}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{647A2907-2D52-46AA-A13B-EDF284896B73}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{647A2907-2D52-46AA-A13B-EDF284896B73}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{647A2907-2D52-46AA-A13B-EDF284896B73}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22C08F24-3BFA-4024-A347-FB5DAB181065}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22C08F24-3BFA-4024-A347-FB5DAB181065}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22C08F24-3BFA-4024-A347-FB5DAB181065}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22C08F24-3BFA-4024-A347-FB5DAB181065}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
