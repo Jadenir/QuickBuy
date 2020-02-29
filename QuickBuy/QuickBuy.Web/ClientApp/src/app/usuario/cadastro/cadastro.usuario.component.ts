@@ -9,7 +9,7 @@ import { UsuarioServico } from '../../servicos/usuario/usuario.servico';
 })
 
 export class CadastroUsuarioComponent implements OnInit {
-    
+
     public usuario: Usuario;
 
     constructor(private usuarioServico: UsuarioServico) {
@@ -18,5 +18,18 @@ export class CadastroUsuarioComponent implements OnInit {
 
     ngOnInit(): void {
         this.usuario = new Usuario();
+    }
+
+    public cadastrar() {
+        //chama metodo para cadastrar novo usuario, no serviço de cadastro de usuario
+        this.usuarioServico.cadastrarUsuario(this.usuario)
+            .subscribe(
+                usuario_json => {
+
+                },
+                err => {
+
+                }
+            );
     }
 }
