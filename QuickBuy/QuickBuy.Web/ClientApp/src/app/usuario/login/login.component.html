@@ -44,11 +44,17 @@
         A senha deve ser informada.
       </div>
     </div>
-    <button class="btn btn-primary btn-block" type="submit" (click)="entrar()">Entrar</button>
-
+    <button class="btn btn-primary btn-block" type="submit" (click)="entrar()" [disabled]="ativar_spinner">
+      <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" *ngIf="ativar_spinner"></span>
+      Entrar
+    </button>
+    <!--mostra mensagem de erro, caso aconteça algum erro-->
+    <div class="alert alert-danger" *ngIf="mensagem">
+      {{mensagem}}
+    </div>
     <div>
       <img src="../../../assets/img/quick-b-logo.jpg" />
     </div>
-         
+
   </form>
 </div>
