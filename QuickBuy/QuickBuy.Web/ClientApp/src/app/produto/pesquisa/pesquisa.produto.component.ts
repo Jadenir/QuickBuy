@@ -31,6 +31,7 @@ export class PesquisaProdutodComponent implements OnInit {
     }
     //Redireciona para tela de cadastro de produtos
     public adicionarProduto() {
+        sessionStorage.setItem('produtoSession', "");
         this.router.navigate(['/produto']);
     }
 
