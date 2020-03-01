@@ -21,10 +21,10 @@ namespace QuickBuy.Dominio.Entidades
             LimparMensagensValidacao();
 
             if (string.IsNullOrEmpty(Email))
-                MensagemValidacao.Add("Crítica: Não foi informado o email.");
+                mensagemValidacao.Add("Crítica: Não foi informado o email.");
 
             if (string.IsNullOrEmpty(Senha))
-                MensagemValidacao.Add("Crítica: Não foi informado a senha.");
+                mensagemValidacao.Add("Crítica: Não foi informado a senha.");
 
 
         }

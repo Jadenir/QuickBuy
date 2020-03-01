@@ -15,10 +15,10 @@ namespace QuickBuy.Dominio.Entidades
             LimparMensagensValidacao();
 
             if (ProdutoId == 0)
-                MensagemValidacao.Add("Crítica: Não foi identificado qual a referencia do produto.");
+                mensagemValidacao.Add("Crítica: Não foi identificado qual a referencia do produto.");
             
             if (Quantidade == 0)
-                MensagemValidacao.Add("Crítica: Não foi informada a quantidade do produto.");
+                mensagemValidacao.Add("Crítica: Não foi informada a quantidade do produto.");
         }
     }
 }

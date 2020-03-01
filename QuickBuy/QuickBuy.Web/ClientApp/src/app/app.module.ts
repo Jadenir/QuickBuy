@@ -13,6 +13,7 @@ import { GuardaRotas } from './autorizacao/guarda.rotas'
 import { UsuarioServico } from './servicos/usuario/usuario.servico';
 import { CadastroUsuarioComponent } from './usuario/cadastro/cadastro.usuario.component';
 import { ProdutoServico } from './servicos/produto/produto.servico';
+import { PesquisaProdutodComponent } from './produto/pesquisa/pesquisa.produto.component';
 
 @NgModule({
     declarations: [
@@ -21,7 +22,8 @@ import { ProdutoServico } from './servicos/produto/produto.servico';
         HomeComponent,
         ProdutoComponent,
         LoginComponent,
-        CadastroUsuarioComponent
+        CadastroUsuarioComponent,
+        PesquisaProdutodComponent
     ],
     imports: [
         BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -32,6 +34,7 @@ import { ProdutoServico } from './servicos/produto/produto.servico';
             { path: 'produto', component: ProdutoComponent },
             { path: 'entrar', component: LoginComponent },
             { path: 'novo-usuario', component: CadastroUsuarioComponent },
+            { path: 'pesquisar-produto', component: PesquisaProdutodComponent }
         ])
     ],
     providers: [UsuarioServico, ProdutoServico],

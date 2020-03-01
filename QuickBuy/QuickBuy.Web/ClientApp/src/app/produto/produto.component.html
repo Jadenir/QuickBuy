@@ -6,7 +6,10 @@
        name="nomeProduto"
        placeholder="Nome do produto"
        class="form-control mb-2 col-md-4"
-       [ngClass]=""
+       [ngClass]="{
+            'is-invalid':nome.invalid && (nome.dirty || nome.touched),
+            'is-valid':nome.valid && (nome.dirty || nome.touched)
+           }"
        [(ngModel)]="produto.nome"
        #nome="ngModel"
        required />
@@ -23,7 +26,10 @@
        name="descricaoProduto"
        placeholder="Descrição do produto"
        class="form-control mb-2 col-md-4"
-       [ngClass]=""
+       [ngClass]="{
+            'is-invalid':descricao.invalid && (descricao.dirty || descricao.touched),
+            'is-valid':descricao.valid && (descricao.dirty || descricao.touched)
+           }"
        [(ngModel)]="produto.descricao"
        #descricao="ngModel"
        required />
@@ -40,7 +46,10 @@
        name="precoProduto"
        placeholder="Preço"
        class="form-control mb-2 col-md-2"
-       [ngClass]=""
+       [ngClass]="{
+            'is-invalid':preco.invalid && (preco.dirty || preco.touched),
+            'is-valid':preco.valid && (preco.dirty || preco.touched)
+           }"
        [(ngModel)]="produto.preco"
        #preco="ngModel"
        required />
@@ -53,18 +62,29 @@
 <!--Seleciona foto do produto, apenas 1-->
 <div class="input-group mb-2">
   <div class="custom-file col-md-4">
-    <label for="inputFile" class="custom-file-label">Escolha uma foto</label>
     <input type="file"
            class="custom-file-input"
            id="inputFile"
            (change)="inputChange($event.target.files)">
+    <label for="inputFile" class="custom-file-label">Escolha uma foto</label>
   </div>
 </div>
-<!--botão para gravar o produto-->
-<button class="btn btn-primary mb-2"
-        (click)="cadastrar()"
-        [disabled]="ativar_spinner">
-  <span class="spinner-border spinner-border-sm"
-        *ngIf="ativar_spinner"></span>
-  Cadastrar
-</button>
+
+<div class="form-inline">
+  <!--botão para gravar o produto-->
+  <button class="btn btn-primary"
+          (click)="cadastrar()"
+          [disabled]="ativar_spinner">
+    <span class="spinner-border spinner-border-sm"
+          *ngIf="ativar_spinner"></span>
+    Cadastrar
+  </button>
+  <!--botão para cancelar-->
+  <button class="btn btn-secondary" style="margin-left:4px" [routerLink]="['/pesquisar-produto']">
+    Cancelar
+  </button>
+</div>
+
+<div class="alert alert-danger col-md-4 " *ngIf="mensagem">
+  {{mensagem}}
+</div>

@@ -6,22 +6,20 @@
         public string Nome { get; set; }
         public string Descricao { get; set; }
         public decimal Preco { get; set; }
+        public string NomeArquivo { get; set; }
 
         public override void Validate()
         {
             LimparMensagensValidacao();
 
-            if (Id == 0)
-                MensagemValidacao.Add("Crítica: Não foi informado o referencia do produto.");
-
             if (string.IsNullOrEmpty(Nome))
-                MensagemValidacao.Add("Crítica: Não foi informado o nome do produto.");
+                mensagemValidacao.Add("Nome do produto não foi informado");
 
             if (string.IsNullOrEmpty(Descricao))
-                MensagemValidacao.Add("Crítica: Não foi informado a descrição do produto.");
+                mensagemValidacao.Add("Descrição do produto não foi informada");
 
             if (Preco == 0)
-                MensagemValidacao.Add("Crítica: Não foi informado o preço do produto.");
+                mensagemValidacao.Add("Preço do produto não foi informado");
         }
     }
 }
