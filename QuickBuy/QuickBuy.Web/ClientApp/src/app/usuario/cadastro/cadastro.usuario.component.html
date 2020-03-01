@@ -1,10 +1,108 @@
-﻿<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <title></title>
-</head>
-<body>
-
-</body>
-</html>
+<div class="text-center">
+  <form class="form-signin">
+    <h1 class="h4 mb-2 login">Criar Conta</h1>
+    <!--E-mail-->
+    <label for="inputEmail" class="sr-only">E-mail</label>
+    <input type="email"
+           id="inputEmail"
+           name="email"
+           placeholder="E-mail"
+           class="form-control mb-2"
+           [ngClass]="{
+            'is-invalid':email.invalid && (email.dirty || email.touched),
+            'is-valid':email.valid && (email.dirty || email.touched)
+           }"
+           [(ngModel)]="usuario.email"
+           #email="ngModel"
+           email
+           required />
+    <!--Validação para o campo e-mail-->
+    <div class="invalid-feedback mb-2" *ngIf="email.invalid && (email.dirty || email.touched)">
+      <div *ngIf="email.errors.required">
+        O e-mail é obrigatório.
+      </div>
+      <div *ngIf="email.errors.email">
+        O e-mail não está no formato correto.
+      </div>
+    </div>
+    <!--Senha-->
+    <label for="inputSenha" class="sr-only">Senha</label>
+    <input type="password"
+           id="inputSenha"
+           name="senha"
+           placeholder="Senha"
+           class="form-control mb-2"
+           [ngClass]="{
+            'is-invalid':senha.invalid && (senha.dirty || senha.touched),
+            'is-valid':senha.valid && (senha.dirty || senha.touched)
+           }"
+           [(ngModel)]="usuario.senha"
+           #senha="ngModel"
+           senha
+           required />
+    <!--Validação para o campo senha-->
+    <div class="invalid-feedback mb-2" *ngIf="senha.invalid && (senha.dirty || senha.touched)">
+      <div *ngIf="senha.errors.required">
+        A senha deve ser informada.
+      </div>
+    </div>
+    <!--Nome-->
+    <label for="inputNome" class="sr-only">Nome</label>
+    <input type="text"
+           id="inputNome"
+           name="nome"
+           placeholder="Nome"
+           class="form-control mb-2"
+           [ngClass]="{
+            'is-invalid':nome.invalid && (nome.dirty || nome.touched),
+            'is-valid':nome.valid && (nome.dirty || nome.touched)
+           }"
+           [(ngModel)]="usuario.nome"
+           #nome="ngModel"
+           required />
+    <!--Validação para o campo nome-->
+    <div class="invalid-feedback mb-2" *ngIf="nome.invalid && (nome.dirty || nome.touched)">
+      <div *ngIf="email.errors.required">
+        O nome é obrigatório.
+      </div>
+    </div>
+    <!--Sobrenome-->
+    <label for="inputSobreNome" class="sr-only">Sobrenome</label>
+    <input type="text"
+           id="inputSobreNome"
+           name="sobreNome"
+           placeholder="Sobrenome"
+           class="form-control mb-2"
+           [ngClass]="{
+            'is-invalid':sobreNome.invalid && (sobreNome.dirty || sobreNome.touched),
+            'is-valid':sobreNome.valid && (sobreNome.dirty || sobreNome.touched)
+           }"
+           [(ngModel)]="usuario.sobreNome"
+           #sobreNome="ngModel"
+           required />
+    <!--Validação para o campo sobrenome-->
+    <div class="invalid-feedback mb-2" *ngIf="sobreNome.invalid && (sobreNome.dirty || sobreNome.touched)">
+      <div *ngIf="sobreNome.errors.required">
+        O sobrebome é obrigatório.
+      </div>
+    </div>
+    <!--Botão de gravar-->
+    <button class="btn btn-primary btn-block" type="submit" (click)="cadastrar()" [disabled]="ativar_spinner">
+      <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" *ngIf="ativar_spinner"></span>
+      Cadastrar
+    </button>
+    <!--Volta para a pagina de login-->
+    <div class="mb-2">
+      <a [routerLink]='["/entrar"]'>Voltar</a>
+    </div>
+    <!--mostra mensagem de erro, caso aconteça algum erro-->
+    <div class="alert alert-danger mb-2" *ngIf="mensagem">
+      {{mensagem}}
+    </div>
+    <!--mosta mensagem de usuario cadastrado com sucesso-->
+    <div class="alert alert-success" *ngIf="usuarioCadastrado">
+      Usuario cadastrado com sucesso!
+      <a class="alert-link" [routerLink]='["/entrar"]'>Clique aqui</a> para entrar no sistema com a sua conta.
+    </div>
+  </form>
+</div>

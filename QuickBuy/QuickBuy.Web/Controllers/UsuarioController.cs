@@ -20,16 +20,22 @@ namespace QuickBuy.Web.Controllers
             {
                 return Ok();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 return BadRequest(ex.ToString());
             }
         }
         [HttpPost]
-        public ActionResult Post()
+        public ActionResult Post([FromBody] Usuario usuario)
         {
             try
             {
+                var usuarioCadastrado = _usuarioRepositorio.Obter(usuario.Email);
+                //Valida se usuario já existe
+                if (usuarioCadastrado != null)
+                    return BadRequest("Usuário já cadastrado no sistema.");
+                //Grava no banco de dados
+                _usuarioRepositorio.Adicionar(usuario);
                 return Ok();
             }
             catch (Exception ex)
@@ -45,7 +51,7 @@ namespace QuickBuy.Web.Controllers
                 //Consulta na base de dados o usuario por id
                 var usuarioRetorno = _usuarioRepositorio.Obter(usuario.Email, usuario.Senha);
                 //Valida retorno do usuario, se não stpa nulo
-                if(usuarioRetorno  != null)
+                if (usuarioRetorno != null)
                 {
                     return Ok(usuarioRetorno);
                 }

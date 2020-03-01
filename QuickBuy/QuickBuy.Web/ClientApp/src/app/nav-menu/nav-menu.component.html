@@ -3,7 +3,7 @@
     <div class="container">
       <a class="navbar-brand" [routerLink]='["/"]'>QuickBuy</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-label="Toggle navigation"
-        [attr.aria-expanded]="isExpanded" (click)="toggle()">
+              [attr.aria-expanded]="isExpanded" (click)="toggle()">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse" [ngClass]='{"show": isExpanded}'>
@@ -19,9 +19,26 @@
             <a class="nav-link text-dark" [routerLink]='["/entrar"]'>Entrar</a>
           </li>
 
-          <li class="nav-item" [routerLinkActive]='["link-active"]' *ngIf="usuarioLogado()">
-            <a class="nav-item nav-link text-dark" [routerLink]='["/sair"]' (click)="sair()">Sair</a>
+          <li class="nav-item dropdown" *ngIf="usuarioLogado()">
+            <a class="nav-link dropdown-toggle text-dark"
+               role="button"
+               aria-haspopup="true"
+               aria-expanded="false"
+               id="linkMenu"
+               href="#"
+               data-toggle="dropdown">{{usuario.email}}</a>
+            <ul class="dropdown-menu"
+                aria-labelledby="linkMenu">
+              <li class="dropdown-item"
+                  role="menu"
+                  [routerLink]='["/sair"]'
+                  (click)="sair()">Sair</li>
+            </ul>
           </li>
+
+          <!--<li class="nav-item" [routerLinkActive]='["link-active"]' *ngIf="usuarioLogado()">
+            <a class="nav-item nav-link text-dark" [routerLink]='["/sair"]' (click)="sair()">Sair</a>
+          </li>-->
 
         </ul>
       </div>
